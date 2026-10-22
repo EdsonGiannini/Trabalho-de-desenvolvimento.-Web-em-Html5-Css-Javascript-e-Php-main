@@ -1,63 +1,119 @@
-body{
-    padding: 0px;
-    margin: 0px;
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
 }
 
-header{
-    display: flex;
-    justify-content: 15px;
-    align-items: center;
-    height: 55px;
-    background-color:rgb(104, 0, 0);
-    padding: 32px;
-    font-size: 25px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+img { max-width: 100%; height: auto; display: block; }
+
+/* HEADER */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 20px;
+  background-color: rgb(104, 0, 0);
+  padding: 12px 16px;
 }
 
+.logo img { width: 120px; }
 
 .menu-link a {
-    color: rgb(1, 138, 102); /* Cor do texto dos links */
-    text-decoration: none; /* Remove o sublinhado */
-    margin: 0 160px; /* Espaçamento entre os links */
-    transition: color 0.3s ease; /* Transição suave para o hover */
+  color: rgb(1, 138, 102);
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 6px 0;
+  display: inline-block;
+  white-space: nowrap;
+  transition: color 0.3s ease;
 }
 
 .menu-link a:hover {
-    color: #a3e800; /* Cor ao passar o mouse (amarelo) */
-    text-decoration: underline; /* Adiciona sublinhado */
-    
+  color: #a3e800;
+  text-decoration: underline;
 }
 
-
-
+/* MAIN */
 main {
-    display: flex;
-    flex-flow: wrap;
-    height: 500px;
-    background-color:rgb(0, 0, 0);
-    padding: 20px;
-    color: rgb(223, 83, 83);
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background-color: #000;
+  padding: 20px;
+  color: rgb(223, 83, 83);
+  font-size: 1rem;
+  min-height: 500px;
 }
 
+main > div { flex: 1 1 280px; min-width: 0; }
+main > div > img { width: 100%; max-width: 500px; }
+
+/* TABELA */
 table {
-    background-color: rgb(8, 52, 52);
-    font-size: 15px;
-    border: 2px solid black;
-    ;
-
+  background-color: rgb(8, 52, 52);
+  color: #fff;
+  font-size: 0.9rem;
+  border: 2px solid black;
+  border-collapse: collapse;
+  width: 100%;
 }
+th, td { padding: 8px; border: 1px solid #000; text-align: left; }
 
+/* FORMULÁRIO */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  max-width: 600px;
+}
+form h2 { margin-top: 0; font-size: 1.2rem; }
 
+input, textarea, button {
+  font: inherit;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #555;
+  width: 100%;
+}
+textarea { resize: vertical; min-height: 120px; }
 
+button {
+  width: auto;
+  align-self: flex-start;
+  cursor: pointer;
+  background-color: rgb(1, 138, 102);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+}
+button:hover { background-color: #a3e800; color: #000; }
 
-footer{
-    display: flex;
-    height: 70px;
-    background-color:rgb(104, 0, 0);
-    padding: 20px;
-    color:#ffffff;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+/* FOOTER */
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px 20px;
+  background-color: rgb(104, 0, 0);
+  padding: 16px 20px;
+  color: #fff;
+  font-size: 0.95rem;
+}
+footer img { width: 28px; }
+
+/* DESKTOP */
+@media (min-width: 900px) {
+  header { justify-content: flex-start; padding: 16px 32px; gap: 0; }
+  .logo { margin-right: auto; }
+  .logo img { width: 150px; }
+  .menu-link a { margin: 0 24px; }
+
+  footer { justify-content: flex-start; }
+  footer > div:first-child { margin-right: auto; }
 }
